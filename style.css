@@ -1,0 +1,165 @@
+@font-face {
+    font-family: Inconsolata;
+    src: url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50..200,200..900&display=swap');
+}
+
+*{
+    box-sizing: border-box;
+}
+body{    
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "wdth" 50;
+    overflow: hidden;
+}
+#contenido{
+    z-index: 1;
+}
+p, li{
+    cursor:text;
+}
+article{
+    display: flex;
+    column-gap: 42px;
+    max-width: 860px;
+    min-height: 70px;
+    max-height: 0;
+    transition: max-height 500ms ease-in-out;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #232323;
+    box-shadow: 10px 10px 0px 0px #000000;
+    margin-bottom: 20px;
+}
+article:hover{
+    cursor: pointer;
+    max-height: 500px;
+}
+article * {
+    padding: 0 10px 10px 10px;
+}
+article svg{
+    min-width: 60px;
+    transition: all 200ms ease-in-out;
+}
+article:hover svg{
+    align-self: flex-end;
+    rotate: 180deg;
+}
+.flex-row{
+    display: flex;
+    column-gap: 20px;
+}
+article ul{
+    min-width: 350px
+}
+#menu{
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 100px;
+    margin-top: 10px;
+    transform: translateX(200%);
+    transition: all 100ms ease-in-out;
+    height: fit-content;
+    transform-origin: top right;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 10px 10px 0px 0px #000000;
+    padding: 10px 20px 20px 20px;
+}
+#menu li{
+    cursor: default;
+    user-select: none;
+}
+#menu ul{
+    width: fit-content;
+    margin-right: 40px;
+}
+#hIcon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 10px;
+    margin-top: 10px;
+    transition: transform 100ms ease-in-out;
+}
+#hIcon:hover{
+    cursor: pointer;
+    transform: scaleX(1.1);
+}
+#hIcon path{
+    transition: all 100ms ease-in-out;
+}
+#imgDecor{
+    z-index: 0;
+    user-select: none;
+    position: fixed;
+    width: 60vw;
+    right: -30vw;
+    bottom: -30vw;
+    transform-origin: center 50%;
+    animation: spin 5s linear infinite forwards;
+}
+#imgDecor:hover{
+    transition: scale 100ms ease-in-out;
+    scale: 0.9;
+    cursor: crosshair;
+}
+#imgDecor:active{
+    animation-play-state: paused;
+}
+/*ESTILOS DE CONTACTO*/
+#form{  
+    max-width: 50%;
+    min-width: 40%;
+    margin-left: 40px;
+}
+form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+button{
+    margin-top: 10px;
+    max-width: 60px;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+}
+button:hover{
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+}
+input, textarea{
+    border: 1px solid #000000;
+}
+textarea{
+    
+  resize: none;
+}
+.flex-collumn{
+    display: flex;
+    flex-direction: column;
+}
+hr{
+    margin: 0;
+    border: 1px solid #000000;
+}
+.vertical{
+    margin: 0 70px 0 70px;
+}
+
+/*ANIMACIONES CSS3*/
+@keyframes slideNav {
+    from{transform: translateX(200%);}
+    to{transform: translateX(0%);}
+}
+@keyframes spin {
+    from{rotate: 0deg;}
+    to{rotate: 360deg;}
+}
