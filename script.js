@@ -21,3 +21,27 @@ function hamburgerMenu() {
         menu.style.display = "none";
     }
 }
+
+let articulosContent = document.getElementById('articulos');
+let articulos = articulosContent.querySelectorAll('article');
+document.addEventListener('DOMContentLoaded', () =>{
+    for (const articulo of articulos) {
+            let articleList = articulo.classList;
+            let svg = articulo.childNodes[3];
+            let svgList = svg.classList;
+            let children = articulo.children;
+            articulo.addEventListener('click', () =>{
+                    articleList.toggle('open');
+                    svgList.toggle('open-svg')
+                });
+            for (const child of children) {
+                
+                console.log(child);
+            
+                child.addEventListener('click', () =>{
+                    articleList.toggle('open');
+                    svgList.toggle('open-svg')
+                });
+            }
+    }
+})

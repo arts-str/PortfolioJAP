@@ -21,9 +21,10 @@ p, li{
     cursor:text;
 }
 article{
+    position: relative;
     display: flex;
     column-gap: 42px;
-    max-width: 860px;
+    width: 54rem;
     min-height: 70px;
     max-height: 0;
     transition: max-height 500ms ease-in-out;
@@ -32,15 +33,27 @@ article{
     border: 1px solid #232323;
     box-shadow: 10px 10px 0px 0px #000000;
     margin-bottom: 20px;
+    z-index: 5;
+}
+section p{
+    max-width: 20rem;
 }
 article:hover{
     cursor: pointer;
     max-height: 500px;
 }
+.open{
+    max-height: 500px;
+}
+.closed{
+    max-height: 0;
+}
 article * {
     padding: 0 10px 10px 10px;
 }
 article svg{
+    position: absolute;
+    right: 0;
     min-width: 60px;
     transition: all 200ms ease-in-out;
 }
@@ -48,8 +61,17 @@ article:hover svg{
     align-self: flex-end;
     rotate: 180deg;
 }
+.open-svg{
+    align-self: flex-end;
+    rotate: 180deg;
+}
 .flex-row{
     display: flex;
+    column-gap: 20px;
+}
+.lista{
+    display: flex;
+    flex-direction: row;
     column-gap: 20px;
 }
 article ul{
@@ -162,4 +184,17 @@ hr{
 @keyframes spin {
     from{rotate: 0deg;}
     to{rotate: 360deg;}
+}
+
+@media only screen and (max-width: 390px) {
+
+    article{
+      width: 20rem;
+    }
+    .lista{
+      flex-direction: column;
+    }
+    #articulos {
+      margin-top: 5rem;
+    }
 }
