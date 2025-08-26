@@ -4,6 +4,7 @@ let menuB = document.getElementById('hIcon');
 let menuBT = document.getElementById('hTop');
 let menuBM = document.getElementById('hMid');
 let menuBB = document.getElementById('hBot');
+let imgDecor = document.getElementById('imgDecor');
 
 function hamburgerMenu() {
     isHamburgerMenuOn = (isHamburgerMenuOn) ? false: true;
@@ -22,26 +23,21 @@ function hamburgerMenu() {
     }
 }
 
-let articulosContent = document.getElementById('articulos');
-let articulos = articulosContent.querySelectorAll('article');
-document.addEventListener('DOMContentLoaded', () =>{
-    for (const articulo of articulos) {
-            let articleList = articulo.classList;
-            let svg = articulo.childNodes[3];
-            let svgList = svg.classList;
-            let children = articulo.children;
-            articulo.addEventListener('click', () =>{
-                    articleList.toggle('open');
-                    svgList.toggle('open-svg')
-                });
-            for (const child of children) {
-                
-                console.log(child);
-            
-                child.addEventListener('click', () =>{
-                    articleList.toggle('open');
-                    svgList.toggle('open-svg')
-                });
-            }
+function abrirTarjeta(articulo){
+    var selection = window.getSelection();
+    if (selection.type != 'Range') {
+        
+        articulo.classList.toggle('open');
+        let svg = articulo.children[1];
+        svg.classList.toggle('open-svg')
     }
-})
+}
+
+document.addEventListener('DOMContentLoaded', () =>{
+    imgDecor.addEventListener('click', () =>{
+        this.classList.toggle('animation-stop')
+    });
+    imgDecor.addEventListener('touchstart', () =>{
+        this.classList.toggle('animation-stop')
+    });
+});
