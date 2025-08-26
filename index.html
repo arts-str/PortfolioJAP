@@ -11,7 +11,8 @@
         <img draggable="false" id="imgDecor" src="circAsset.png" alt="">
         <div id="contenido">
             <h1>Facundo Magnin</h1>
-            <article>
+            <div id="articulos">
+                <article onclick="abrirTarjeta(this)">
                 <section>
                     <h2>Académico</h2>
                     <p>Soy estudiante avanzado de la Licenciatura de Comunicación Visual (LDCV) de FADU, Udelar.</p>
@@ -20,12 +21,12 @@
                 <svg width="60px" height="60px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 8L14 8V10L8 16L2 10V8H6V0L10 4.76995e-08V8Z" fill="#000000"/>
                 </svg>
-            </article>
-            <article>
+                </article>
+                <article onclick="abrirTarjeta(this)">
                 <section>
                     <h2>¿Qué hago?</h2>
                     <p>Soy Comunicador Visual, me desempeño en labores de:</p>
-                <div class="flex-row">
+                <div class="lista">
                     <ul>
                         <li>Identidad Visual de Marca</li>
                         <li>Diseño Tipográfico</li>
@@ -45,12 +46,12 @@
                 <svg width="60px" height="60px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 8L14 8V10L8 16L2 10V8H6V0L10 4.76995e-08V8Z" fill="#000000"/>
                 </svg>
-            </article>
-            <article>
+                </article>
+                <article onclick="abrirTarjeta(this)">
                 <section>
                     <h2>¿Cómo lo hago?</h2>
                     <p>Para esto, utilizo:</p>
-                    <div class="flex-row">
+                    <div class="lista">
                         <ul>
                             <li>Adobe InDesign</li>
                             <li>Adobe Illustrator</li>
@@ -69,7 +70,8 @@
                 <svg width="60px" height="60px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 8L14 8V10L8 16L2 10V8H6V0L10 4.76995e-08V8Z" fill="#000000"/>
                 </svg>
-            </article>
+                </article>
+            </div>
         </div>
         <aside id="menu">
             <ul>

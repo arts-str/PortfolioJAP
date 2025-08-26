@@ -4,6 +4,7 @@ let menuB = document.getElementById('hIcon');
 let menuBT = document.getElementById('hTop');
 let menuBM = document.getElementById('hMid');
 let menuBB = document.getElementById('hBot');
+let imgDecor = document.getElementById('imgDecor');
 
 function hamburgerMenu() {
     isHamburgerMenuOn = (isHamburgerMenuOn) ? false: true;
@@ -21,3 +22,22 @@ function hamburgerMenu() {
         menu.style.display = "none";
     }
 }
+
+function abrirTarjeta(articulo){
+    var selection = window.getSelection();
+    if (selection.type != 'Range') {
+        
+        articulo.classList.toggle('open');
+        let svg = articulo.children[1];
+        svg.classList.toggle('open-svg')
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () =>{
+    imgDecor.addEventListener('click', () =>{
+        this.classList.toggle('animation-stop')
+    });
+    imgDecor.addEventListener('touchstart', () =>{
+        this.classList.toggle('animation-stop')
+    });
+});

@@ -6,24 +6,28 @@
 *{
     box-sizing: border-box;
 }
+html{
+    overflow-x: hidden;
+}
 body{    
     font-family: "Inconsolata", monospace;
     font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
     font-variation-settings: "wdth" 50;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 #contenido{
     z-index: 1;
 }
-p, li{
+p, li, h1, h2{
     cursor:text;
 }
 article{
+    position: relative;
     display: flex;
     column-gap: 42px;
-    max-width: 860px;
+    width: 54rem;
     min-height: 70px;
     max-height: 0;
     transition: max-height 500ms ease-in-out;
@@ -32,24 +36,48 @@ article{
     border: 1px solid #232323;
     box-shadow: 10px 10px 0px 0px #000000;
     margin-bottom: 20px;
+    z-index: 5;
+    cursor: pointer;
 }
+section p{
+    max-width: 20rem;
+}
+/*
 article:hover{
     cursor: pointer;
     max-height: 500px;
+}*/
+.open{
+    max-height: 500px;
+}
+.closed{
+    max-height: 0;
 }
 article * {
     padding: 0 10px 10px 10px;
 }
 article svg{
+    position: absolute;
+    right: 0;
     min-width: 60px;
     transition: all 200ms ease-in-out;
 }
+/*
 article:hover svg{
+    align-self: flex-end;
+    rotate: 180deg;
+}*/
+.open-svg{
     align-self: flex-end;
     rotate: 180deg;
 }
 .flex-row{
     display: flex;
+    column-gap: 20px;
+}
+.lista{
+    display: flex;
+    flex-direction: row;
     column-gap: 20px;
 }
 article ul{
@@ -70,6 +98,7 @@ article ul{
     border: 1px solid #000000;
     box-shadow: 10px 10px 0px 0px #000000;
     padding: 10px 20px 20px 20px;
+    display: none;
 }
 #menu li{
     cursor: default;
@@ -79,6 +108,7 @@ article ul{
     width: fit-content;
     margin-right: 40px;
 }
+
 #hIcon{
     position: absolute;
     right: 0;
@@ -103,6 +133,9 @@ article ul{
     bottom: -30vw;
     transform-origin: center 50%;
     animation: spin 5s linear infinite forwards;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 #imgDecor:hover{
     transition: scale 100ms ease-in-out;
@@ -112,9 +145,15 @@ article ul{
 #imgDecor:active{
     animation-play-state: paused;
 }
+.animation-stop{
+    animation-play-state: paused;
+}
+.animation-run{
+    animation-play-state: running;
+}
 /*ESTILOS DE CONTACTO*/
 #form{  
-    max-width: 50%;
+    max-width: 50%; 
     min-width: 40%;
     margin-left: 40px;
 }
@@ -126,9 +165,12 @@ form{
 button{
     margin-top: 10px;
     max-width: 60px;
+    padding: 1rem 1rem 1rem 1rem;
     border: none;
     background-color: #000000;
     color: #ffffff;
+    display: flex;
+    justify-content: center;
 }
 button:hover{
     border: 1px solid #000000;
@@ -153,6 +195,13 @@ hr{
 .vertical{
     margin: 0 70px 0 70px;
 }
+.redes-sociales{
+    display: flex;
+    column-gap: 20px;
+}
+.redes-sociales a img, .redes-sociales a svg{
+    width: 7rem;
+}
 
 /*ANIMACIONES CSS3*/
 @keyframes slideNav {
@@ -162,4 +211,101 @@ hr{
 @keyframes spin {
     from{rotate: 0deg;}
     to{rotate: 360deg;}
+}
+@media only screen and (max-width: 1365px) {
+
+    article{
+      width: 40rem;
+    }
+    .lista{
+      flex-direction: column;
+      align-items: center;
+    }
+    .vertical{
+        min-width: 80%;
+    }
+    #articulos {
+      margin-top: 5rem;
+    }
+    #imgDecor{
+        width: 100vw;
+        right: -50vw;
+        bottom: -50vw;
+    }
+    #imgDecor:hover{
+        scale: 1;
+    }
+    .open{
+        max-height: 600px;
+    }
+    #form{
+        margin-bottom: 40px;
+        max-width: 100%;
+        min-width: 80%;
+        margin-left: 0;
+    }
+    .redes-sociales{
+        width: 100%;
+        column-gap: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .redes-container{
+        margin: 0 2.3rem 0 2.3rem;
+    }
+    .redes-sociales a img, .redes-sociales a svg{
+        width: 10rem;
+    }
+    .lista{
+        text-align: center;
+    }
+    button{
+        max-width: 100%;
+    }
+}
+@media only screen and (max-width: 767px) {
+
+    article{
+      width: 21rem;
+    }
+    .lista{
+      flex-direction: column;
+    }
+    #articulos {
+      margin-top: 5rem;
+    }
+    section{
+        max-width: 100%;
+    }
+    article ul{
+        min-width: min-content;
+    }
+    article p{
+        max-width: 80%;
+    }
+    #imgDecor{
+        width: 100vw;
+        right: -50vw;
+        bottom: -50vw;
+    }
+    #imgDecor:hover{
+        scale: 1;
+    }
+    .open{
+    max-height: 600px;
+    }
+    .redes-sociales{
+        width: 100%;
+        column-gap: .5rem;
+    }
+    .redes-container{
+        margin-left: 2.3rem;
+    }
+    .redes-sociales a img, .redes-sociales a svg{
+        width: 5rem;
+    }
+    input{
+        min-height: 2rem;
+    }
 }
